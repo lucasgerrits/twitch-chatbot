@@ -338,3 +338,26 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
+/ChatbotTS/BotTrigger.js.map
+/ChatbotTS/app.js.map
+/ChatbotTS/Ajax.js.map
+/ChatbotTS/Message.js.map
+*.map
+/ChatbotTS.sln
+/ChatbotTS/tsconfig.json
+/ChatbotTS/package.json
+/ChatbotTS/package-lock.json
+/ChatbotTS/Util.js
+/ChatbotTS/UserLevel.js
+/ChatbotTS/User.js
+/ChatbotTS/TypeScript1.js
+/ChatbotTS/TwitchChat.js
+/ChatbotTS/Settings.js
+/ChatbotTS/Message.js
+/ChatbotTS/Debug.js
+/ChatbotTS/commands.js
+/ChatbotTS/Command.js
+/ChatbotTS/ChatbotTS.njsproj
+/ChatbotTS/BotTrigger.js
+/ChatbotTS/app.js
+/ChatbotTS/Ajax.js
