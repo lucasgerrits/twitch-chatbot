@@ -1,6 +1,6 @@
-# Project Title
+# CFB's Twitch Chatbot
 
-A basic chatbot that uses WebSockets to receive IRC messages sent from Twitch. Message string is parsed to check for possible command headers and make appropriate responses, including some external API calls.
+A basic chatbot written in TypeScript for Node.js that uses WebSockets to receive IRC messages sent from Twitch. Message string is parsed to check for possible command headers and make appropriate responses, including some external API calls.
 
 ### Prerequisites
 
