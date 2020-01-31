@@ -14,6 +14,20 @@ npm install ws
 npm install xmlhttprequest
 ```
 
+## Setup
+You will need to create an .ini file in the src directory with the following format:
+```ini
+[twitchBot]
+channelToJoin = channelname
+account = botname
+token = oauth:randomstringofchars
+[twitchAPI]
+clientID = randomstringofchars
+clientSecret = randomstringofchars
+[general]
+debug = false
+```
+
 ## Built With
 
 * [TypeScript](https://www.typescriptlang.org/)
