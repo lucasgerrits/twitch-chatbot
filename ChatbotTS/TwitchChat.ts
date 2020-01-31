@@ -1,7 +1,7 @@
 import { Debug } from './Debug';
 import { Message } from './Message';
 import { Settings } from './Settings';
-import { commands } from './commands';
+import { commandMap } from './commandMap';
 
 const WebSocket = require('ws');
 
@@ -23,7 +23,7 @@ export class TwitchChat {
       }
    }
 
-   public setEventHandlers() {
+   public setEventHandlers(): void {
       this.ws.on('open', this.openConnection.bind(this));
       this.ws.on('message', async function (data) {
          this.handleMessage(data);
@@ -31,7 +31,7 @@ export class TwitchChat {
       this.ws.on('close', this.closeConnection.bind(this));
    }
 
-   public openConnection() {
+   public openConnection(): void {
       Debug.log("openConnection() Start");
       this.ws.send('CAP REQ :twitch.tv/tags twitch.tv/commands twitch.tv/membership');
       this.ws.send('PASS ' + Settings.token);
@@ -39,7 +39,7 @@ export class TwitchChat {
       this.ws.send('JOIN #' + this.channel);
    }
 
-   public closeConnection() {
+   public closeConnection(): void {
       this.ws.close();
       console.log("TwitchChat WebSocket: I did it! I closed.");
    }
@@ -53,10 +53,11 @@ export class TwitchChat {
 
          if (msg.isNotFromSelf()) {
             
-            if (msg.isCommand && commands.has(msg.commandName)) {
+            if (msg.isCommand && commandMap.has(msg.commandName)) {
                Debug.log(msg.commandName + ": Message is a command.");
                try {
-                  msg.command = commands.get(msg.commandName);
+                  msg.command = commandMap.get(msg.commandName);
+                  msg.command.sender = msg.sender;
 
                   var reply = await msg.reply();
 

@@ -361,3 +361,5 @@ healthchecksdb
 /ChatbotTS/BotTrigger.js
 /ChatbotTS/app.js
 /ChatbotTS/Ajax.js
+*.js
+/ChatbotTS/config.ini

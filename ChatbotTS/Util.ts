@@ -1,4 +1,16 @@
+const fs = require('fs');
+
 export abstract class Util {
+
+   public static readFileAsString(fileName: string): string {
+      try {
+         var fileContents: string = fs.readFileSync(fileName, 'utf8');
+      }
+      catch (err) {
+         return err;
+      }
+      return fileContents;
+   }
 
    public static diceRoll(size: number) {
       return Util.randomInt(size) + 1;

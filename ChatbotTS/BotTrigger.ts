@@ -1,13 +1,15 @@
+import { User } from './User';
 import { UserLevel } from './UserLevel';
 
 export class BotTrigger {
-   private cooldown: number;
+   public cooldown: number;
    public isOnCooldown: boolean;
    public reply: any;
    private userLevel: UserLevel;
+   public sender: User;
 
    constructor() {
-      var defaultCooldownMilliseconds = 0;
+      var defaultCooldownMilliseconds = 3000;
 
       this.cooldown = defaultCooldownMilliseconds;
       this.isOnCooldown = false;
